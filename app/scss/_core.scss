@@ -3,7 +3,8 @@
 /* Variables*/
 $base_font: "Lato", sans-serif;
 $base_size: 16px;
-$base_line-height: 1.2;
+$base_line-height: 1;
+$tr_md: 0.5s;
 
 /* Color */
 $bg: #cccccc;
@@ -18,7 +19,6 @@ $el-colors:(
   'white':#ffffff,
   'lazur': #3e9cdc
 );
-
 
 
 /*Breakpoints*/
@@ -130,6 +130,12 @@ select {
   font-weight: $weight;
 }
 
+@mixin flex($jc,$ai) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
 // Othes styles
 
 html {
@@ -148,6 +154,10 @@ html {
   line-height: $base_line-height;
   color: $base_text;
 }
+
+.body--hidden {
+  overflow: hidden;
+} 
 
 .header {
   flex: 0 0 auto;
