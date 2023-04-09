@@ -17,6 +17,68 @@
   }
 }
 
+@each $color, $hex, $text in ("white",#fff, #444)("lazur",yellow, #fff) {
+
+  .btn--#{$color} {
+    background-color: $hex;
+    color:$text;
+  }
+}
+
+.btn-toggle {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border: 2px solid $white;
+  border-radius: 10px;
+  transform: translateY(-50%);
+  @include media-size(sm) {
+    right: 2.25rem;
+  }
+  @include media-size(md) {
+    right: 2.5rem;
+  }
+  @include media-size(lg) {
+   display: none;
+  }
+
+  span {
+    width: 70%;
+    height: 2px;
+    background-color: $white;
+    border-radius: 10px;
+    transition: $tr_md;
+    &:not(:first-child) {
+    margin-top: 0.3rem;
+    }
+  }
+}
+
+.btn-toggle--active {
+  span {
+    position: absolute;
+    &:nth-child(1) {
+      transform: rotate(45deg);
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+
+    &:nth-child(3) {
+      margin-top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
 
 .link {
   display: inline-block;
