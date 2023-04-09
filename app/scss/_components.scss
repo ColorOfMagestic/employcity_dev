@@ -1,1 +1,16 @@
 // styles for each component needed for this project, including buttons, modal windows, etc.
+
+.btn {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.link {
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}

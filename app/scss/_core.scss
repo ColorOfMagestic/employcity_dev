@@ -1,16 +1,28 @@
 // contains variables, resets, mixins, and other similar styles
 
 /* Variables*/
+$base_font: "", sans-serif;
+$base_size: 16px;
+$base_line-height: 1.2;
 
-  /* Color */
-  $bg: #cccccc;
-  $white: #ffffff;
-  $black: #000000;
+/* Color */
+$bg: #cccccc;
+$white: #ffffff;
+$black: #000000;
+$base_text: #222222;
 
+/*Breakpoints*/
 
-  /* Reset*/
+$xs: 320px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1400px;
+$xxl: 1800px;
 
-  /* Указываем box sizing */
+/* Reset*/
+
+/* Указываем box sizing */
 *,
 *::before,
 *::after {
@@ -69,6 +81,70 @@ select {
   font: inherit;
 }
 
-body {
-  background-color: red;
+
+html {
+  height: 100%;
+  font-size: $base_size;
+}
+
+.page-body {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  min-width: $xs;
+  min-height: 100%;
+  margin: 0 auto;
+  font-family: $base_font;
+  line-height: $base_line-height;
+  color: $base_text;
+}
+
+.header {
+  flex: 0 0 auto;
+ }
+ 
+ .page {
+   flex: 1 0 auto;
+ 
+ }
+ .footer {
+   flex: 0 0 auto;
+ }
+
+
+// .container {
+//   // width: ;
+//   margin: 0 auto;
+// }
+
+/* Mixins*/
+
+@mixin media-size($bp) {
+  @if ($bp == xs) {
+    @media (min-width: $xs) {
+      @content;
+    }
+  } @else if ($bp == sm) {
+    @media (min-width: $sm) {
+      @content;
+    }
+  } @else if ($bp == md) {
+    @media (min-width: $md) {
+      @content;
+    }
+  } @else if ($bp == lg) {
+    @media (min-width: $lg) {
+      @content;
+    }
+  } @else if ($bp == xl) {
+    @media (min-width: $xl) {
+      @content;
+    }
+  }@else if ($bp == xxl) {
+    @media (min-width: $xxl) {
+      @content;
+    }
+  }@else {
+    @error "UNKNOWN MEDIA BREAKPOINT #{$bp}";
+  }
 }
