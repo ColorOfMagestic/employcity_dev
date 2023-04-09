@@ -1,7 +1,7 @@
 // contains variables, resets, mixins, and other similar styles
 
 /* Variables*/
-$base_font: "", sans-serif;
+$base_font: "Lato", sans-serif;
 $base_size: 16px;
 $base_line-height: 1.2;
 
@@ -9,7 +9,17 @@ $base_line-height: 1.2;
 $bg: #cccccc;
 $white: #ffffff;
 $black: #000000;
+$lazur: #3e9cdc;
+$lazur_hover: #43ABF0;
 $base_text: #222222;
+
+
+$el-colors:(
+  'white':#ffffff,
+  'lazur': #3e9cdc
+);
+
+
 
 /*Breakpoints*/
 
@@ -82,6 +92,46 @@ select {
 }
 
 
+/* Mixins*/
+
+@mixin media-size($bp) {
+  @if ($bp == xs) {
+    @media (min-width: $xs) {
+      @content;
+    }
+  } @else if ($bp == sm) {
+    @media (min-width: $sm) {
+      @content;
+    }
+  } @else if ($bp == md) {
+    @media (min-width: $md) {
+      @content;
+    }
+  } @else if ($bp == lg) {
+    @media (min-width: $lg) {
+      @content;
+    }
+  } @else if ($bp == xl) {
+    @media (min-width: $xl) {
+      @content;
+    }
+  }@else if ($bp == xxl) {
+    @media (min-width: $xxl) {
+      @content;
+    }
+  }@else {
+    @error "UNKNOWN MEDIA BREAKPOINT #{$bp}";
+  }
+}
+
+@mixin font($size, $weight, $height: $base_line-height) {
+  font-size:$size;
+  line-height: $height;
+  font-weight: $weight;
+}
+
+// Othes styles
+
 html {
   height: 100%;
   font-size: $base_size;
@@ -103,7 +153,7 @@ html {
   flex: 0 0 auto;
  }
  
- .page {
+ .page_main {
    flex: 1 0 auto;
  
  }
@@ -112,11 +162,33 @@ html {
  }
 
 
-// .container {
-//   // width: ;
-//   margin: 0 auto;
-// }
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  @include media-size(xs) {
+    max-width: 300px;
+  }
+  @include media-size(sm) {
+    max-width: 510px;
+  }
+  @include media-size(md) {
+    max-width: 690px;
+  }
+  @include media-size(lg) {
+    max-width: 930px;
+  }
+  @include media-size(xl) {
+    max-width: 1172px;
+  }
+}
 
+.color {
+  @each  $color,$hex in $el-colors {
+    &--#{$color} {
+      color: $hex;
+    }
+  }
+}
 
 /* Fonts*/
 
@@ -154,36 +226,4 @@ html {
   font-weight: 800;
   font-display: swap;
   src: url("../fonts/dist/Lato-Heavy.woff2"), url("../fonts/dist/Lato-Heavy.woff");
-}
-
-/* Mixins*/
-
-@mixin media-size($bp) {
-  @if ($bp == xs) {
-    @media (min-width: $xs) {
-      @content;
-    }
-  } @else if ($bp == sm) {
-    @media (min-width: $sm) {
-      @content;
-    }
-  } @else if ($bp == md) {
-    @media (min-width: $md) {
-      @content;
-    }
-  } @else if ($bp == lg) {
-    @media (min-width: $lg) {
-      @content;
-    }
-  } @else if ($bp == xl) {
-    @media (min-width: $xl) {
-      @content;
-    }
-  }@else if ($bp == xxl) {
-    @media (min-width: $xxl) {
-      @content;
-    }
-  }@else {
-    @error "UNKNOWN MEDIA BREAKPOINT #{$bp}";
-  }
 }
