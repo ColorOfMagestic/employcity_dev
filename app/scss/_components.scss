@@ -4,13 +4,28 @@
   display: flex;
   justify-content:center;
   align-items:center;
-  background-color: transparent;
   border: none;
   cursor: pointer;
 }
+
+%btn_default {
+  padding: 1rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  @include media-size(lg) {
+    @include font(0.75rem, 400);
+  }
+}
+
 
 .link {
   display: inline-block;
   color: inherit;
   text-decoration: none;
+}
+
+.title {
+  @include media-size(xl) {
+    @include font(2.25rem, 800);
+  }
 }
