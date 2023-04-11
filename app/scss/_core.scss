@@ -1,5 +1,43 @@
 // contains variables, resets, mixins, and other similar styles
 
+/* Fonts*/
+
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/dist/Lato-Regular.woff2"), url("../fonts/dist/Lato-Regular.woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/dist/Lato-Medium.woff2"), url("../fonts/dist/Lato-Medium.woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/dist/Lato-SemiBold.woff2"), url("../fonts/dist/Lato-SemiBold.woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/dist/Lato-Bold.woff2"), url("../fonts/dist/Lato-Bold.woff");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/dist/Lato-Heavy.woff2"), url("../fonts/dist/Lato-Heavy.woff");
+}
+
 /* Variables*/
 $base_font: "Lato", sans-serif;
 $base_size: 16px;
@@ -156,7 +194,7 @@ html {
   color: $base_text;
 }
 
-.body--hidden {
+.body_hidden {
   overflow: hidden;
 } 
 
@@ -201,40 +239,4 @@ html {
   }
 }
 
-/* Fonts*/
 
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-Regular.woff2"), url("../fonts/dist/Lato-Regular.woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-Medium.woff2"), url("../fonts/dist/Lato-Medium.woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-SemiBold.woff2"), url("../fonts/dist/Lato-SemiBold.woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-Bold.woff2"), url("../fonts/dist/Lato-Bold.woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-Heavy.woff2"), url("../fonts/dist/Lato-Heavy.woff");
-}
