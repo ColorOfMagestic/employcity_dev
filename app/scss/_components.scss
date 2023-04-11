@@ -19,7 +19,7 @@
 
 @each $color, $hex, $text in ("white",#fff, #444)("lazur",yellow, #fff) {
 
-  .btn--#{$color} {
+  .btn_#{$color} {
     background-color: $hex;
     color:$text;
   }
@@ -60,7 +60,7 @@
   }
 }
 
-.btn-toggle--active {
+.btn-toggle_active {
   span {
     position: absolute;
     &:nth-child(1) {
