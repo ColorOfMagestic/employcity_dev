@@ -1,1 +1,125 @@
 // contains styles for header and footer, grid, etc.
+.flex {
+  @include flex(flex-start,flex-start);
+}
+.flex-sc {
+  @include flex(flex-start,center);
+}
+.flex--cc {
+  @include flex(center,center);
+}
+
+
+
+.header {
+  position: relative;
+  background-color: rgba(16, 16, 29, 0.9);
+  &-wrapper {
+    padding-block: 2rem 1.9rem;
+    flex-flow: column;
+    @include media-size(lg) {
+      justify-content: space-between;
+      align-items: center;
+      flex-flow: row nowrap;
+    }
+  }
+
+  .logo {
+    img {
+      width: 60%;
+    }
+
+  }
+
+  .nav {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    height: 100vh;
+    padding: 2rem 1.5rem;
+    background-color: rgba(16, 16, 29);
+    border-radius:0 0.75rem 0.75rem 0;
+    transform: translateX(-110%);
+    transition: $tr_md;
+
+    @include media-size(sm) {
+      padding-inline: 2rem;
+    }
+
+    @include media-size(md) {
+      width: 60vw;
+    }
+    
+    @include media-size(lg) {
+      z-index: 0;
+      position: relative;
+      top: auto;
+      left: auto;
+      width: auto;
+      min-width: 40vw;
+      height: auto;
+      padding: 0;
+      background-color: transparent;
+      border-radius:0;
+      transform: translateX(0);  
+    }
+
+    @include media-size(xl) {
+      min-width: auto;
+    }
+
+
+
+    .logo {
+      @include media-size(lg) {
+        display: none;
+      }
+    }
+
+    &__list {
+      flex-flow: column;
+      margin-top: 3rem;
+      @include media-size(sm) {
+        padding-left: 2rem;
+      }
+  
+      @include media-size(lg) {
+        flex-flow: row;
+        margin-top: 0;
+        padding-left: 0;
+        justify-content: flex-end;
+      }
+      li {
+        &:not(:first-child) {
+        margin-top: 1.5rem;
+        }
+        @include media-size(sm) {
+          &:not(:first-child) {
+            margin-top: 2.25rem;
+          }
+        }
+        @include media-size(lg) {
+          &:not(:first-child) {
+            margin-top: 0;
+            margin-left: 3.75rem;
+          }
+        }
+        a {
+          color: $white;
+          text-transform: uppercase;
+          @include font(0.8rem, 600);
+          transition: $tr_md;
+          &:hover {
+          color: $lazur_hover;
+          }
+        }
+      }
+    }
+  }
+
+  .nav_active {
+    transform: translateX(0%);
+  }
+}
