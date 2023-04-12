@@ -9,19 +9,29 @@
   @include flex(center,center);
 }
 
-
+/* HEADER */ 
 
 .header {
-  position: relative;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  padding-block: 1.25rem;
   background-color: rgba(16, 16, 29, 0.9);
+  @include media-size(lg) {
+    padding-block: 0;
+  }
+  
+
   &-wrapper {
-    padding-block: 2rem 1.9rem;
     flex-flow: column;
     @include media-size(lg) {
       justify-content: space-between;
       align-items: center;
       flex-flow: row nowrap;
+      padding-block: 2rem 1.9rem;
     }
+
+    
   }
 
   .logo {
@@ -123,3 +133,584 @@
     transform: translateX(0%);
   }
 }
+
+
+/* INTRO */ 
+.intro {
+  position: relative;
+  padding-top: 4.7rem;
+  padding-bottom: 3rem;
+  background: url(../img/intro_bg.jpg) no-repeat 60%/cover;
+  @include media-size(lg) {
+    padding-top: 6.25rem;
+    padding-bottom: 13.75rem;
+  }
+
+  .intro__wrapper {
+    @include media-size(lg) {
+      max-width: 780px;
+    }
+  }
+
+  &__title {
+    margin-top: 2rem;
+    font-size: 1.75em;
+    text-align: center;
+    @include media-size(lg) {
+      margin-top: 4rem;
+      font-size: 2.25rem;
+      text-align: left;
+    }
+    @include media-size(xxl) {
+      margin-top: 6.43rem;
+      font-size: 3rem;
+    }
+
+    .br {
+      @include media-size(lg) {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 2.5rem;
+    @include media-size(lg) {
+      margin-top: 5rem;
+    }
+    .text {
+      @include font(1.125em, 700);
+
+      @include media-size(lg) {
+        @include font(1.25em, 700);
+      }
+    }
+  }
+
+  &__content-list {
+    display: block;
+
+    li {
+      &:first-child {
+        margin-top: 0.625rem;
+      }
+      position: relative;
+      margin-top: 0.3rem;
+      padding-left: 1.5rem;
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 0.625rem;
+        transform: translateY(-50%);
+        display: block;
+        content: '';
+        width: 5px;
+        height: 2px;
+        background-color: $black;
+      }
+
+      @include media-size(lg) {
+        @include font(1.25em, 400);
+      }
+
+    }
+  }
+
+
+  &__buttons {
+    margin-top: 2.5rem;
+    @include media-size(sm) {
+      max-width: max-content;
+      display: grid;
+      grid-template: 1fr/ repeat(2, 1fr);
+      gap: 2rem;
+    }
+    @include media-size(lg) {
+      margin-top: 5rem;
+    }
+    button, a {
+      width: 100%;
+      width: 12rem;
+      margin: 0 auto;
+      @extend %btn_default;
+      @include media-size(md) {
+        margin: 0;
+      }
+    }
+
+    button {
+      @include hover($white,#2A2B30, #6F6D7B);
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.25rem;
+      @include hover($lazur,$white, $white);
+      @include media-size(sm) {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+/* ORDER */
+
+.order {
+  position: relative;
+  padding-block: 2rem 2.5rem;
+  background: url(../img/bg.png) no-repeat 50%/cover;
+
+  @include media-size(sm) {
+    padding-block: 2.5rem 3rem;
+  }
+  @include media-size(md) {
+    padding-block: 4rem 5rem;
+  }
+
+  @include media-size(lg) {
+    padding-block: 6rem 7.5rem;
+  }
+
+  @include media-size(xxl) {
+    padding-block: 7.5rem 9.375rem;
+    background: url(../img/bg.png) no-repeat 50%/100%;
+  }
+
+  &__content {
+    color: $white;
+    text-align: center;
+  }
+
+  &__title {
+    @include media-size(lg){
+      @include font(1.75rem, 800);
+    }
+    @include media-size(xxl){
+      @include font(2.25rem, 800);
+    }
+    
+  }
+
+  &__description {
+    color:#bbb;
+    margin-top: 1rem;
+    @include media-size(xxl) {
+      margin-top: 2rem;
+      @include font(1.125rem, 400);
+    }
+  }
+
+  &__scheme {
+    position: relative;
+    margin-block: 2rem;
+    @include media-size(lg) {
+      margin-block: 3.5rem;
+    }
+
+    @include media-size(xxl) {
+    margin-block: 5rem;
+    &::before {
+      position: absolute;
+      top: calc(3rem - 1px);
+      left: 0;
+      display: block;
+      content: '';
+      width: 100%;
+      height:6px;
+      background: url(../img/dots.png)no-repeat 50%/contain;
+    }
+  }
+  }
+
+  .scheme {
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    @include media-size(sm) {
+      flex-flow: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    @include media-size(md) {
+      gap: 1rem;
+    }
+    @include media-size(lg) {
+      gap: 2rem;
+    }
+    @include media-size(xl) {
+      flex-wrap: nowrap;
+    }
+    
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-direction: column;
+      width: 13.0625rem;
+      min-height: 10.3125rem;
+      &:not(:first-child) {
+        margin-top: 1.25rem;
+      }
+      @include media-size(sm) {
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+  
+      }
+    }
+  
+    &__item-icon {
+      position: relative;
+      display: grid;
+      place-items: center;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: $lazur;
+      border: 0.3125rem;
+
+      .icon {
+        fill: $white;
+      }
+    }
+  
+    &__item-text {
+      margin-top: 20px;
+    }
+  }
+  
+
+  &__form {
+    width: 100%;
+    display: grid;
+    grid-template: auto/1fr;
+    gap: 2rem;
+    @include media-size(sm) {
+      width: 80%;
+      margin: 0 auto;
+    }
+    @include media-size(lg) {
+      grid-template: auto/repeat(4,1fr);
+      grid-template-areas: 
+      "n n e e"
+      "s s f f"
+      "r r r r"
+      "b b b b";
+    }
+
+    @include media-size(xl){
+      grid-template: auto/repeat(6,1fr);
+      grid-template-areas: 
+      "s s e e n n"
+      "r r r r f f"
+      ". . b b . .";
+    }
+  }
+
+  &__custom-select {
+    @include media-size(lg){
+      grid-area: s;
+    }
+  }
+
+  .select {
+    position: relative;
+    padding: 0.875rem 0.625rem;
+    font-size: 1em;
+    color: $dark;
+    background-color:$input_bg;
+    border-radius: 3px;
+    border: 1px solid $white;
+    transition: $tr_md;
+    @include media-size(xxl) {
+      padding: 0.75rem 0.625rem;
+      font-size: 1.125em;
+    }
+    &__value {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all $tr_md;
+      .icon {
+        width: 0.625rem;
+        height: 0.625rem;
+        margin-top: 5px;
+        margin-right: 5px;
+        fill: fill;
+        transition: all $tr_md;
+      }
+    }
+    &__list {
+      z-index: 1;
+      position: absolute;
+      overflow: hidden;
+      left: -1px;
+      max-height: 0;
+      top: 3rem;
+      width: calc(100% + 2px);
+      background-color: rgba(39, 39, 51, 0.9);
+      border-radius: 0 0 3px 3px;
+      border: 1px solid #3D4050;
+      border-top: none;
+      border-bottom-width: 0;
+      transition: all $tr_md;
+      .list-wrapper {
+         .list{
+          padding: 10px;
+          overflow-y: scroll;
+          height:9rem;
+          padding: 0.625rem;
+          scrollbar-width: thin;
+          scrollbar-color: $lazur #3D4050;
+          &::-webkit-scrollbar {
+            background-color: #3D4050;
+            width: 6px;
+            border-radius: 3px;
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: $lazur;
+            border-radius: 3px;
+          }
+    
+          .list-item {
+            color: $white;
+            transition: $tr_md;
+            &:not(:first-child) {
+            margin-top: 1rem;
+            }
+            &:hover {
+            color: #42A9ED;
+            }
+          }
+        }
+      }
+    }
+    &:hover {
+      background-color:rgba(61, 64, 80, 0.85);
+      border: 1px solid transparent;
+      .select__value {
+        color: $white;
+        .icon {
+          fill: $white;
+          transform: rotate(180deg);
+          transform-origin: 50% 50%;
+        }
+      }
+      .select__list {
+        max-height: 180px;
+        padding-bottom: 0.625rem;
+        border-bottom-width: 1px;
+      }
+    }  
+  }
+  
+  .active {
+    background-color:rgba(61, 64, 80, 0.85);
+    border: 1px solid transparent;
+    .select__value {
+      color: $white;
+      .icon {
+        fill: $white;
+        transform: rotate(180deg);
+        transform-origin: 50% 50%;
+      }
+    }
+    .select__list {
+      max-height: 180px;
+      padding-bottom: 0.625rem;
+      border-bottom-width: 1px;
+    }
+
+
+  }
+
+  &__label_email {
+    @include media-size(lg){
+      grid-area: e;
+    }
+  }
+
+  &__label_name {
+    @include media-size(lg){
+      grid-area: n;
+    }
+
+  }
+
+  .range {
+    width: 100%;
+  
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      color: $white;
+    }
+  
+    &__text, &__value {
+      font-size: 0.875rem;
+      @include media-size(xl) {
+        font-size: 1.125rem;
+      }
+  
+    }
+  
+    &__input {
+      width: 100%;
+      margin-top: 1rem;
+      -webkit-appearance: none;
+      background: transparent;
+      background: transparent; 
+      border-color: transparent;
+      color: transparent;
+
+      @include media-size(xl) {
+        margin-top: 0.4rem;
+      }
+  
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+      }
+      &:focus {
+        outline: none;
+      }
+  
+      &::-ms-track {
+        width: 100%;
+        cursor: pointer;
+      }
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: -0.625rem;
+        background: #42A9ED;
+        border: 3px solid #286690;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      &::-moz-range-thumb {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: -0.625rem;
+        background: #42A9ED;
+        border: 3px solid #286690;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      &::-ms-thumb {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: -0.625rem;
+        background: #42A9ED;
+        border: 3px solid #286690;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+  
+      &::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 6px;
+        background: rgba(255,255,255, 0.7);
+        border-radius: 3px;
+        border: 1px solid $white;
+        cursor: pointer;
+      }
+      &:focus::-webkit-slider-runnable-track {
+        box-shadow: 0px 0px 10px 3px rgba(255, 255, 255, 0.2);
+      }
+  
+      &::-moz-range-track {
+        width: 100%;
+        height: 6px;
+        background: rgba(255,255,255, 0.7);
+        border-radius: 3px;
+        border: 1px solid $white;
+        cursor: pointer;
+      }
+      
+    }
+  
+  }
+
+
+  &__range {
+    @include media-size(lg){
+      grid-area: r;
+    }
+  }
+
+  .file {
+    &__input {
+      width: 0.1px;
+      height: 0.1px;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      z-index: -1;
+    }
+    &__label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding:0.75rem 0.625rem;
+        width: 100%;
+        font-size: 1.125em;
+        color: $dark;
+        background-color:$white;
+        border-radius: 3px;
+        border: 1px solid $white;
+        transition: $tr_md;
+        .icon {
+          width: 1rem;
+          height: 1.25rem;
+          margin-right: 0.625rem;
+          fill: $dark;
+          transition: $tr_md;
+        }
+  
+        .label__span {
+          text-transform: uppercase;
+          @include font(15px, 500);
+        }
+    }
+  
+    &__input:focus + label,
+    &__input + label:hover {
+      cursor: pointer;
+      color: white;
+      background-color:rgba(61, 64, 80, 0.85);
+      .icon {
+        fill: $white;
+      }
+  
+    }
+  }
+  
+  &__file {
+    @include media-size(lg){
+      grid-area: f;      
+    }
+  }
+
+  &__btn {
+    @extend %btn_default;
+    @include media-size(lg) {
+      grid-area: b;
+      width: 40%;
+      margin: 0 auto;
+      @include hover($white,#2A2B30, #6F6D7B);
+      @include font (15px, 500);
+    }
+    @include media-size(xl){
+      width: 100%;
+      margin-top: 1.25rem;
+    }
+  }
+}
+
+
+
