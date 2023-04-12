@@ -46,17 +46,20 @@ $tr_md: 0.5s;
 
 /* Color */
 $bg: #cccccc;
+$input_bg: rgba(255, 255, 255, 0.85);
 $white: #ffffff;
 $black: #000000;
+$dark: #272733;
 $lazur: #3e9cdc;
 $lazur_hover: #43ABF0;
-$base_text: #222222;
-
 
 $el-colors:(
   'white':#ffffff,
   'lazur': #3e9cdc
 );
+
+$btn-white: ("white",$white, #2A2B30, #6F6D7B);
+$btn-lazur: ("lazur",$lazur, $white, $white );
 
 
 /*Breakpoints*/
@@ -175,6 +178,14 @@ select {
   align-items: $ai;
 }
 
+@mixin hover($bgc, $color, $border-color) {
+  &:hover {
+    background-color: $bgc;
+    color: $color;
+    border-color: $border-color;
+    }
+}
+
 // Othes styles
 
 html {
@@ -191,7 +202,7 @@ html {
   margin: 0 auto;
   font-family: $base_font;
   line-height: $base_line-height;
-  color: $base_text;
+  color: $black;
 }
 
 .body_hidden {
@@ -202,7 +213,7 @@ html {
   flex: 0 0 auto;
  }
  
- .page_main {
+ .page-main {
    flex: 1 0 auto;
  
  }
@@ -231,9 +242,18 @@ html {
   }
 }
 
+.title {
+  text-transform: uppercase;
+}
+
+.icon {
+  width: 2.125rem;
+  height: 2.125rem;
+}
+
 .color {
   @each  $color,$hex in $el-colors {
-    &--#{$color} {
+    &-#{$color} {
       color: $hex;
     }
   }
