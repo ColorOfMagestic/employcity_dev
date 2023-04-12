@@ -9,19 +9,28 @@
 }
 
 %btn_default {
-  padding: 1rem;
+  padding:calc(1rem - 1px);
   border-radius: 4px;
   text-transform: uppercase;
-  @include media-size(lg) {
-    @include font(0.75rem, 400);
-  }
+  transition: $tr_md;
+  @include font(0.75rem, 400);
+  
 }
 
-@each $color, $hex, $text in ("white",#fff, #444)("lazur",yellow, #fff) {
+@each $color, $hex, $text, $border-color in ($btn-white, $btn-lazur) {
 
   .btn_#{$color} {
     background-color: $hex;
     color:$text;
+    border: 1px solid $border-color;
+  }
+}
+
+@each $color, $hex, $text, $border-color in ($btn-white,$btn-lazur) {
+  .link_#{$color} {
+    background-color: $hex;
+    color:$text;
+    border: 1px solid $border-color;
   }
 }
 
@@ -90,4 +99,35 @@
   @include media-size(xl) {
     @include font(2.25rem, 800);
   }
+}
+
+.label {
+  display: block;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: 100%;
+  padding: 0.75rem 0.625rem;
+  width: 100%;
+  font-size: 1em;
+  color: $dark;
+  background-color:$input_bg;
+  border-radius: 3px;
+  border: 1px solid $white;
+  transition: $tr_md;
+  outline: 0;
+  @include media-size(xxl) {
+    font-size: 1.125em;
+  }
+  &::placeholder {
+    opacity: 1;
+  }
+
+  &:focus {
+    color: white;
+    background-color:rgba(61, 64, 80, 0.85);
+  }
+
 }
