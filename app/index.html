@@ -29,16 +29,16 @@
                         </div>
                         <ul class="nav__list flex">
                             <li class="nav__list-item">
-                                <a href="javascript:void(0)" class="link">Бизнес</a>
+                                <a href="javascript:void(0)">Бизнес</a>
                             </li>
                             <li class="nav__list-item">
-                                <a href="javascript:void(0)" class="link">О нас</a>
+                                <a href="javascript:void(0)">О нас</a>
                             </li>
                             <li class="nav__list-item">
-                                <a href="javascript:void(0)" class="link">Цены</a>
+                                <a href="javascript:void(0)">Цены</a>
                             </li>
                             <li class="nav__list-item">
-                                <a href="javascript:void(0)" class="link">Оформить заказ</a>
+                                <a href="javascript:void(0)">Оформить заказ</a>
                             </li>
                         </ul>
                     </nav>
@@ -153,10 +153,10 @@
                      </div>
                     </div>
                     <label class="label order__label order__label_email">
-                        <input class="input  order__input" type="email" name="email" placeholder="Ваш e-mail">
+                        <input class="input  order__input" type="email" name="email" placeholder="Ваш e-mail" required>
                     </label>
                     <label class="label order__label order__label_name">
-                        <input class="input  order__input" type="text" name="userName" placeholder="Ваше имя">
+                        <input class="input  order__input" type="text" name="userName" placeholder="Ваше имя" required>
                     </label>
                     <div class="range order__range">
                         <div class="range__info">
@@ -179,7 +179,29 @@
         </main>
         <footer class="footer">
             <div class="container">
-                
+                <div class="footer__wrapper flex">
+                    <div class="footer__copyright">
+                        <p>© 2018 <span class="span_uppercase">«LoremIpsum.net»</span> <span class="span_block">Все права защищены.</span></p>
+                    </div>
+                    <div class="footer__wallets">
+                        <div class="footer__wallets-item">
+                            <svg class="icon"><use xlink:href="img/sprite.svg#qiwi"></use></svg>
+                            <p>Qiwi wallet</p>
+                        </div>
+                        <div class="footer__wallets-item">
+                            <img  src="img/yaMoney.svg" alt="Яндекс деньги">
+                            <p>Yandex Money</p>
+                        </div>
+                        <div class="footer__wallets-item">
+                            <svg class="icon"><use xlink:href="img/sprite.svg#webm"></use></svg>
+                            <p>Web Money</p>
+                        </div>
+                    </div>
+                    <div class="footer__contacts">
+                        <a href="mailto:info@ipsum228.com" class="footer__contacts-link footer__contacts-link_mail">info@ipsum228.com</a> 
+                        <a href="vk.com" class="footer__contacts-link footer__contacts-link_vk">Мы вконтакте</a> 
+                    </div>
+                </div>
             </div>
         </footer>
 
