@@ -3,9 +3,9 @@
 %btn_default {
   border: none;
   cursor: pointer;
-  color: $text;
-  background-color: $hex;
-  border: 1px solid $border-color;
+  // color: $text;
+  // background-color: $hex;
+  // border: 1px solid $border-color;
   // @include flex();
   // @include font();
 }
@@ -27,10 +27,10 @@
   padding: 0.75rem 0.625rem;
   width: 100%;
   font-size: 1em;
-  color: $dark;
-  background-color: $input_bg;
-  border-radius: 3px;
-  border: 1px solid $white;
+  // color: $dark;
+  // background-color: $input_bg;
+  // border-radius: 3px;
+  // border: 1px solid $white;
   transition: $tr_md;
   outline: 0;
 
