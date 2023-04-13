@@ -1,211 +1,32 @@
 <!DOCTYPE html>
 <html class="page" lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>
-            Test task
-        </title>
-        <link rel="shortcut icon" href="/img/logo.svg" type="image/svg+xml">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.min.css" />
-    </head>
 
-    <body class="page-body">
-        <header class="header">
-            <div class="container">
-                <div class="header-wrapper flex">
-                    <button class="btn btn-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <div class="logo">
-                        <img  src="img/logo.svg" alt="" width="247" height="35">
-                    </div>
-                    <nav class="nav">
-                        <div class="logo">
-                            <img  src="img/logo.svg" alt="" width="247" height="35">
-                        </div>
-                        <ul class="nav__list flex">
-                            <li class="nav__list-item">
-                                <a href="javascript:void(0)">Бизнес</a>
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="javascript:void(0)">О нас</a>
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="javascript:void(0)">Цены</a>
-                            </li>
-                            <li class="nav__list-item">
-                                <a href="javascript:void(0)">Оформить заказ</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </header>
-        <main class="page-main">
-            <!-- ========== Start intro ========== -->
-            <section class="intro">
-                <div class="container">
-                    <div class="intro__wrapper">
-                        <h1 class="title intro__title"> <span class="color-lazur">Lorem ipsum</span> dolor sit <span class="br"> amet
-                        consectetur <span class="color-lazur">adipiscing</span></span></h1>
-                        <div class="intro__content">
-                            <p class="text">At vero eos et accusamus et iusto odio dignissimos ducimus!</p>
-                            <ul class="intro__content-list">
-                                <li>
-                                    <p>Totam rem aperiam eaque ipsa</p>
-                                </li>
-                                <li>
-                                    <p>Sit voluptatem accusantium doloremque laudantium</p>
-                                </li>
-                                <li>
-                                    <p>Sed ut perspiciatis, unde omnis iste natus error</p>
-                                </li>
-                            </ul>
-                            <div class="intro__buttons">
-                                <button class="btn btn_lazur">Заказать</button>
-                                <a href="javascript:void(0)"  class="link link_white">Подробнее</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- ========== End intro ========== -->
-            <!-- ========== Start order ========== -->
-            <section class="order">
-              <div class="container">
-                <div class="order__content">
-                    <h2 class="title  order__title" data-aos="fade-right">
-                        Оформление <span class="color-lazur">Заказа</span>
-                    </h2>
-                    <p class="order__description" data-aos="fade-up">Перед заполнением формы ознакомьтесь с нашей схемой работы!</p>
-                    <div class="scheme order__scheme flex">
-                        <div class="scheme__item" data-aos="zoom-in">
-                            <div class="scheme__item-icon">
-                                <svg class="icon"><use xlink:href="img/sprite.svg#search"></use></svg>
-                            </div>
-                            <p class="scheme__item-text">Lorem ipsum dolor
-                                sit amet</p>
-                        </div>
-                        <div class="scheme__item" data-aos="zoom-in">
-                            <div class="scheme__item-icon">
-                                <svg class="icon"><use xlink:href="img/sprite.svg#percent"></use></svg>
-                            </div>
-                            <p class="scheme__item-text">Сonsecteturadipiscing elit</p>
-                        </div>
-                        <div class="scheme__item" data-aos="zoom-in">
-                            <div class="scheme__item-icon">
-                                <svg class="icon"><use xlink:href="img/sprite.svg#subtract"></use></svg>
-                            </div>
-                            <p class="scheme__item-text">Sed do eiusmod tempor</p>
-                        </div>
-                        <div class="scheme__item" data-aos="zoom-in">
-                            <div class="scheme__item-icon">
-                                <svg class="icon"><use xlink:href="img/sprite.svg#mail"></use></svg>
-                            </div>
-                            <p class="scheme__item-text">Esse cillum dolore
-                                eu fugiat</p>
-                        </div>
-                        <div class="scheme__item" data-aos="zoom-in">
-                            <div class="scheme__item-icon">
-                                <svg class="icon"><use xlink:href="img/sprite.svg#money"></use></svg>
-                            </div>
-                            <p class="scheme__item-text">Excepteur sint occaecat cupidatat non proident</p>
-                        </div>
-                    </div>
-                </div>
-                <form class="form order__form" data-aos="fade-up">
-                    <div class="select order__custom-select">
-                      <div class="select__value">
-                        <span>Выберите тип системы</span>
-                        <svg class="icon">
-                        <use xlink:href="img/sprite.svg#arrow"></use>
-                        </svg>
-                      </div>
-                      <div class="select__list">
-                      <div class="list-wrapper">
-                        <ul class="list">
-                            <li class="list-item">
-                                <span data-value="Sed ut perspiciatis">Sed ut perspiciatis</span>
-                                
-                            </li>
-                            <li class="list-item">
-                                <span data-value="Nemo enim ipsam">Nemo enim ipsam</span>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        Page name
+    </title>
+    <!-- <link rel="shortcut icon" href="/img/logo.svg" type="image/svg+xml"> -->
+    <link rel="stylesheet" href="css/style.min.css" />
+</head>
 
-                            </li>
-                            <li class="list-item">
-                                <span data-value="Et harum quidem">Et harum quidem</span>
+<body class="page-body">
+    <header class="header">
+        <div class="container">
+        </div>
+    </header>
+    <main class="page-main">
+    </main>
+    <footer class="footer">
+        <div class="container">
+        </div>
+    </footer>
 
-                            </li>
-                            <li class="list-item">
-                                <span data-value="Temporibus autem">Temporibus autem</span>
+    <!-- Optionally, you can connect libraries -->
+    
+    <!-- <script type="module" src="js/libraries.min.js"></script> -->
+    <script type="module" src="js/main.min.js"></script>
+</body>
 
-                            </li>
-                            <li class="list-item">
-                                <span data-value="Itaque earum rerum">Itaque earum rerum</span>
-
-                            </li>
-                        </ul>
-                      </div>
-                     </div>
-                    </div>
-                    <label class="label order__label order__label_email">
-                        <input class="input  order__input" type="email" name="email" placeholder="Ваш e-mail" required>
-                    </label>
-                    <label class="label order__label order__label_name">
-                        <input class="input  order__input" type="text" name="userName" placeholder="Ваше имя" required>
-                    </label>
-                    <div class="range order__range">
-                        <div class="range__info">
-                            <p class="range__text">Sed ut perspiciatis, unde omnis iste natus</p>
-                            <span class="range__value">75%</span>
-                        </div>
-                        <input class="range__input" type="range" min="0"  max="100" value="75">
-                    </div>
-                    <div class="file order__file">
-                        <input type="file" name="file" id="file" class="file__input" />
-                        <label class="file__label"  for="file">                        <svg class="icon"><use xlink:href="img/sprite.svg#subtract_small"></use></svg>
-                            <span class="label__span">Прикрепить файл</span>
-                        </label>
-                    </div>
-                    <button class="btn btn_lazur order__btn">Отправить</button>
-                </form>
-              </div>
-            </section>
-            <!-- ========== End order ========== -->
-        </main>
-        <footer class="footer">
-            <div class="container">
-                <div class="footer__wrapper flex">
-                    <div class="footer__copyright">
-                        <p>© 2018 <span class="span_uppercase">«LoremIpsum.net»</span> <span class="span_block">Все права защищены.</span></p>
-                    </div>
-                    <div class="footer__wallets">
-                        <div class="footer__wallets-item">
-                            <svg class="icon"><use xlink:href="img/sprite.svg#qiwi"></use></svg>
-                            <p>Qiwi wallet</p>
-                        </div>
-                        <div class="footer__wallets-item">
-                            <img  src="img/yaMoney.svg" alt="Яндекс деньги">
-                            <p>Yandex Money</p>
-                        </div>
-                        <div class="footer__wallets-item">
-                            <svg class="icon"><use xlink:href="img/sprite.svg#webm"></use></svg>
-                            <p>Web Money</p>
-                        </div>
-                    </div>
-                    <div class="footer__contacts">
-                        <a href="mailto:info@ipsum228.com" class="footer__contacts-link footer__contacts-link_mail">info@ipsum228.com</a> 
-                        <a href="vk.com" class="footer__contacts-link footer__contacts-link_vk">Мы вконтакте</a> 
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script type="module" src="js/main.min.js"></script>
-    </body>
 </html>

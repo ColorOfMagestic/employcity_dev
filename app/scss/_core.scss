@@ -9,37 +9,9 @@
   font-display: swap;
   src: url("../fonts/dist/Lato-Regular.woff2"), url("../fonts/dist/Lato-Regular.woff");
 }
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-Medium.woff2"), url("../fonts/dist/Lato-Medium.woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-SemiBold.woff2"), url("../fonts/dist/Lato-SemiBold.woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-Bold.woff2"), url("../fonts/dist/Lato-Bold.woff");
-}
-@font-face {
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("../fonts/dist/Lato-Heavy.woff2"), url("../fonts/dist/Lato-Heavy.woff");
-}
 
 /* Variables*/
-$base_font: "Lato", sans-serif;
+$base_font: "", sans-serif;
 $base_size: 16px;
 $base_line-height: 1;
 $tr_md: 0.5s;
@@ -49,9 +21,6 @@ $bg: #cccccc;
 $input_bg: rgba(255, 255, 255, 0.85);
 $white: #ffffff;
 $black: #000000;
-$dark: #272733;
-$lazur: #3e9cdc;
-$lazur_hover: #43ABF0;
 
 $el-colors:(
   'white':#ffffff,
@@ -242,21 +211,21 @@ html {
   }
 }
 
-.title {
-  text-transform: uppercase;
-}
+// .title {
+  
+// }
 
-.icon {
-  width: 2.125rem;
-  height: 2.125rem;
-}
+// .icon {
+//   width: 2.125rem;
+//   height: 2.125rem;
+// }
 
-.color {
-  @each  $color,$hex in $el-colors {
-    &-#{$color} {
-      color: $hex;
-    }
-  }
-}
+// .color {
+//   @each  $color,$hex in $el-colors {
+//     &-#{$color} {
+//       color: $hex;
+//     }
+//   }
+// }
 
 

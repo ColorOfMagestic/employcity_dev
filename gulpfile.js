@@ -2,6 +2,7 @@ import pkg from 'gulp';
 const { src, dest, watch, parallel, series } = pkg;
 import mainSass from 'sass'
 import gulpSass from 'gulp-sass'
+import sourceMap from 'gulp-sourcemaps';
 const sass = gulpSass(mainSass)
 import concat  from "gulp-concat";
 import sync  from "browser-sync";
@@ -18,7 +19,6 @@ import ttf2woff  from "gulp-ttf2woff";
 
 let librariesPath = [
     "app/js/src/libraries/swiper/swiper-bundle.min.js",
-    // "app/js/src/libraries/imask/imask-bundle.js",
     // "app/js/src/libraries/fancybox/fancybox-bundle.js",
   ];
 
@@ -111,6 +111,7 @@ function js_libraries() {
 
 function styles() {
   return src("app/scss/style.scss")
+    .pipe(sourceMap.init())
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(concat("style.min.css"))
     .pipe(
@@ -119,6 +120,7 @@ function styles() {
         grid: true,
       })
     )
+    .pipe(sourceMap.write())
     .pipe(dest("app/css"))
     .pipe(browserSync.stream());
 }
