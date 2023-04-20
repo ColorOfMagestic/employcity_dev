@@ -17,11 +17,13 @@ import { deleteAsync } from 'del';
 import ttf2woff2  from "gulp-ttf2woff2";
 import ttf2woff  from "gulp-ttf2woff";
 
-let librariesPath = [
-    "app/js/src/libraries/swiper/swiper-bundle.min.js",
-    // "app/js/src/libraries/fancybox/fancybox-bundle.js",
+const librariesPath = [
+  "node_modules/swiper/swiper-bundle.min.js",
   ];
 
+const librariesPathCss = [
+    "node_modules/swiper/swiper-bundle.min.css",
+  ];
 
 function woff2() {
   return src(["app/fonts/src/*.ttf"])
@@ -103,6 +105,9 @@ function scripts() {
 }
 
 function js_libraries() {
+  if(!librariesPath) {
+    return 
+  }
   return src(librariesPath)
   .pipe(concat('libraries.min.js'))
   .pipe(dest("app/js")) 
@@ -110,7 +115,7 @@ function js_libraries() {
 }
 
 function styles() {
-  return src("app/scss/style.scss")
+  return src(["app/scss/style.scss"])
     .pipe(sourceMap.init())
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(concat("style.min.css"))
@@ -125,17 +130,21 @@ function styles() {
     .pipe(browserSync.stream());
 }
 
+function librariesCSS() {
+  return src(librariesPathCss)
+    .pipe(concat("libraries.min.css"))
+    .pipe(dest('app/css/libraries/'));
+};
+
 // Сборка в отдельный проект
 function build() {
   return src(
     [
-      "app/css/style.min.css",
+      "app/css/**/*.css",
       "app/fonts/**/*",
       "app/img/**/*",
       "app/js/*.js",
       "app/*.html",
-      "app/PHPMailer/**/*",
-      "app/*.php"
     ],
     { base: "app" }
   ).pipe(dest("dist"));
@@ -156,6 +165,7 @@ const browserReboot = browsersync;
 // gulp scripts - Следить за изменениями в скриптах JS
 const allScripts = scripts;
 const libraries = js_libraries;
+const librariesCss = librariesCSS;
 // gulp images - Сжатие изображений и сохранение в /dist/images
 export const OptImages = transformImages;
 export const toDoSprite = sprite;
@@ -168,7 +178,7 @@ const convertWoff = woff;
 const convertWoff2 = woff2;
 
 // gulp - Запуск всех команд
-export const dev = parallel(allStyles, allScripts,libraries, browserReboot, allWatching, toDoSprite);
+export const dev = parallel(allStyles, allScripts,libraries,librariesCss, browserReboot, allWatching, toDoSprite);
 
 // gulp build - Удаление и перезапись содержимого папки /dist
 export const createBuild = series(clean,processImg, build);
