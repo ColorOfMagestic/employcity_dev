@@ -170,7 +170,6 @@ const librariesCss = librariesCSS;
 export const OptImages = transformImages;
 export const toDoSprite = sprite;
 export const toDoWebp = webp;
- export const processImg = parallel(OptImages, toDoSprite, toDoWebp);
 // gulp del - Удалить папку /dist
 const clean = clear;
 
@@ -178,10 +177,10 @@ const convertWoff = woff;
 const convertWoff2 = woff2;
 
 // gulp - Запуск всех команд
-export const dev = parallel(allStyles, allScripts,libraries,librariesCss, browserReboot, allWatching, toDoSprite);
+export const dev = parallel(allStyles, allScripts,libraries,librariesCss, browserReboot, allWatching);
 
 // gulp build - Удаление и перезапись содержимого папки /dist
-export const createBuild = series(clean,processImg, build);
+export const createBuild = series(clean,build);
 // gulp fonts
 export  const convertFonts = parallel(convertWoff, convertWoff2);
 
